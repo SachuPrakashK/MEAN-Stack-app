@@ -1,0 +1,21 @@
+.container{
+    top: 40px;
+    background-color: blueviolet;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0 10px 12px 0 rgba(0,0,0,0.15), 0 17px 50px 0 rgba(0,0,0,0.15)
+}
+    
+.container h3{
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.container form{
+    padding-bottom: 20px;
+}
+
+.container form label{
+    color: white;
+}
