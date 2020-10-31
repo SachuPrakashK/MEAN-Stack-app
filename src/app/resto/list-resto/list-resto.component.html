@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th *ngIf="userService.loggedIn()" scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody class="restos" *ngIf='restos$ | async as restos'>
+      <tr *ngFor="let resto of restos">
+        <td>{{resto.name}}</td>
+        <td>{{resto.address}}</td>
+        <td>{{resto.email}}</td>
+        <td *ngIf="userService.loggedIn()">
+          <i (click)="deleteResto(resto._id)" class="fa fa-trash" style="font-size:20px;color:red; cursor: pointer;"></i>&nbsp;&nbsp;
+          &nbsp;&nbsp;
+          <a>
+            <i routerLink="update-resto/{{resto._id}}" class="fa fa-edit" style="font-size:20px;color:blue; cursor: pointer;"></i>
+          </a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
